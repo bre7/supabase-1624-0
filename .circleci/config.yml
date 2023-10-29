@@ -28,9 +28,10 @@ jobs:
       - run:
           name: Install Make
           command: choco install make
-      - run: |
-          yarn install
-          yarn supabase -h
+      - run:
+          name: Install dependencies
+          command: yarn install
+      - run: yarn supabase -h
 workflows:
   my-workflow:
     jobs:
