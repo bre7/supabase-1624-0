@@ -1,0 +1,14 @@
+version: 2.1
+orbs:
+  win: circleci/windows@4.1
+jobs:
+  build:
+    executor: win/server-2019
+    steps:
+      - run: |
+          yarn install
+          yarn supabase -h
+workflows:
+  my-workflow:
+    jobs:
+      - build
