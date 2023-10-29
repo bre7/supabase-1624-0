@@ -6,6 +6,28 @@ jobs:
     executor: win/default
     steps:
       - checkout
+      - run:
+          name: Install NVM
+          command: choco install -y nvm
+      - run:
+          name: Install Node environment
+          command: |
+            $NODE_VERSION = Get-Content .nvmrc
+            nvm install $NODE_VERSION
+            nvm use $NODE_VERSION
+      - run:
+          name: Install Yarn
+          command: npm install -g yarn
+      - run:
+          name: Verify versions
+          shell: bash.exe
+          command: |
+            node --version
+            nvm --version
+            yarn --version
+      - run:
+          name: Install Make
+          command: choco install make
       - run: |
           yarn install
           yarn supabase -h
