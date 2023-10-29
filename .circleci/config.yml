@@ -1,10 +1,11 @@
 version: 2.1
 orbs:
-  win: circleci/windows@4.1
+  win: circleci/windows@5.0
 jobs:
   build:
-    executor: win/server-2019
+    executor: win/default
     steps:
+      - checkout
       - run: |
           yarn install
           yarn supabase -h
