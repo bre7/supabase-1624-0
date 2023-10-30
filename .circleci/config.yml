@@ -30,7 +30,7 @@ jobs:
           command: choco install make
       - run:
           name: Install dependencies
-          command: yarn install --frozen-lockfile
+          command: yarn install --immutable
       - run: yarn supabase -h
 workflows:
   my-workflow:
