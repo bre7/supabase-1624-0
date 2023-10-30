@@ -2,6 +2,6 @@
   "name": "test-yarn4",
   "packageManager": "yarn@4.0.1",
   "devDependencies": {
-    "supabase": "1.106.1"
+    "supabase": "^1.106.1"
   }
 }
